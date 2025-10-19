@@ -18,7 +18,7 @@ export default function ProductCard({
   className = "",
 }: ProductCardProps) {
   return (
-    <Link href={`/product/${p.id}`} className={`block group ${className}`}>
+    <Link href={`/products/${p.id}`} className={`block group ${className}`}>
       <div className="relative w-full aspect-square bg-paper rounded-[20px] overflow-hidden mb-2 md:mb-3 lg:mb-4">
         <Image
           src={p.image}

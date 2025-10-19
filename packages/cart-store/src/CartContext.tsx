@@ -76,7 +76,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       );
     const clear: CartState["clear"] = () => setItems([]);
     const subtotal = items.reduce((s, x) => s + x.qty * x.price, 0);
-    const count = items.reduce((s, x) => s + x.qty, 0);
+    const count = items.length;
 
     return { items, add, remove, setQty, clear, subtotal, count };
   }, [items]);

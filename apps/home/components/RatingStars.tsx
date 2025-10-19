@@ -5,6 +5,7 @@ type Props = {
   value?: number;
   count?: number;
   sizeClass?: string;
+  textClass?: string;
   colorClass?: string;
   showNumber?: boolean;
 };
@@ -14,6 +15,7 @@ export default function RatingStars({
   count,
   sizeClass = "size-4.5",
   colorClass = "text-[#FFC633]",
+  textClass = "text-xs lg:text-sm text-black/60",
   showNumber = true,
 }: Props) {
   const rating = Math.max(0, Math.min(5, Math.round(value * 2) / 2));
@@ -43,7 +45,7 @@ export default function RatingStars({
       </div>
 
       {showNumber && (
-        <div className="text-xs lg:text-sm text-black/60">
+        <div className={`${textClass}`}>
           {rating}/<span>5</span>
           {typeof count === "number" && <span> ({count})</span>}
         </div>

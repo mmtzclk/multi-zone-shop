@@ -15,7 +15,7 @@ export default function HeroSection() {
               of style.
             </p>
             <Link
-              href="/product/16"
+              href="/products/16"
               className="h-13 text-center flex items-center justify-center px-20 rounded-full bg-black hover:bg-black/90 text-white  font-medium duration-300 w-full sm:w-fit"
             >
               Shop Now
