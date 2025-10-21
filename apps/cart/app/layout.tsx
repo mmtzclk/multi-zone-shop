@@ -1,19 +1,18 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import Providers from "./providers";
+import Header from "./components/Header";
+import { satoshi, archivoBlack } from "@repo/fonts";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={`${archivoBlack.variable} ${satoshi.variable}`}>
       <body className="min-h-dvh antialiased">
-        <header className="border-b">
-          <nav className="max-w-6xl mx-auto px-4 py-3 flex gap-4">
-            <a href="/">Home</a>
-            <a href="/cart">Cart</a>
-          </nav>
-        </header>
         <Providers>
-          <main className="max-w-6xl mx-auto px-4 py-6">{children}</main>
+          <Header />
+          <main className="container-block my-5 lg:my-8 xl:my-12">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 export async function getProduct(id: string): Promise<Product> {
   const url = `https://fakestoreapi.com/products/${id}`;
   const res = await fetch(url, {
-    cache: "no-store",
-    headers: { accept: "application/json" },
+    next: { revalidate: 3600, tags: ["products"] },
   });
 
   const raw = await res.text();

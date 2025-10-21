@@ -5,8 +5,7 @@ const API = "https://fakestoreapi.com/products";
 
 export async function getProducts(): Promise<Product[]> {
   const res = await fetch(API, {
-    next: { revalidate: 60, tags: ["products"] },
-    headers: { accept: "application/json" },
+    next: { revalidate: 3600, tags: ["products"] },
   });
 
   const raw = await res.text();

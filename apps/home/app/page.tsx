@@ -1,15 +1,7 @@
-import { Product } from "@repo/types";
 import HeroSection from "@/sections/HeroSection";
 import BrandsSection from "@/sections/BrandsSection";
 import ProductGridSection from "@/sections/ProductGridSection";
-
-async function getProducts(): Promise<Product[]> {
-  const res = await fetch("https://fakestoreapi.com/products", {
-    next: { revalidate: 60, tags: ["products"] },
-  });
-  if (!res.ok) throw new Error("Ürünler alınamadı");
-  return res.json();
-}
+import { getProducts } from "./lib/product";
 
 export default async function Page() {
   const products = await getProducts();
