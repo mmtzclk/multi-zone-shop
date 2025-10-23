@@ -1,2 +1,2 @@
-/cart     /cart/   301
-/cart/*   https://https://multi-zone-cart.netlify.app/cart/:splat   200
+/cart      https://multi-zone-cart.netlify.app/cart     200
+/cart/*    https://multi-zone-cart.netlify.app/cart/:splat   200
