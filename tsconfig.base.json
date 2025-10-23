@@ -9,7 +9,9 @@
     "baseUrl": ".",
     "paths": {
       "@repo/ui": ["packages/ui/src"],
-      "@repo/types": ["packages/types"]
+      "@repo/types": ["packages/types"],
+      "@repo/fonts": ["packages/fonts"],
+      "@repo/cart-store": ["packages/cart-store"]
     }
   }
 }

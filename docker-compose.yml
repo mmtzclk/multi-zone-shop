@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  home:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        SCOPE: "@apps/home"
+        APP_DIR: "apps/home"
+    image: mz-home:latest
+    expose: ["3000"]
+    networks: [web]
+
+  cart:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        SCOPE: "@apps/cart"
+        APP_DIR: "apps/cart"
+    image: mz-cart:latest
+    expose: ["3000"]
+    networks: [web]
+
+  gateway:
+    image: nginx:1.27-alpine
+    depends_on: [home, cart]
+    ports: ["80:80"]
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks: [web]
+
+networks:
+  web: {}

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useCart } from "@repo/cart-store";
 import { Product } from "@repo/types";
@@ -26,7 +25,6 @@ export default function AddToCartButton({
     try {
       setStatus("loading");
 
-      await sleep(2000);
       await Promise.resolve(add(product, qty));
       setStatus("success");
       toast("Product added to cart", {

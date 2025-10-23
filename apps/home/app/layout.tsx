@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.co"),
-  title: { default: "SHOP.CO", template: "%s | SHOP.CO" },
+  title: { default: "SHOP.CO", template: "%s - SHOP.CO" },
   description:
     "SHOP.CO: New-season apparel for men & women, limited collections, and fast delivery. Secure shopping, easy returns.",
   keywords: [

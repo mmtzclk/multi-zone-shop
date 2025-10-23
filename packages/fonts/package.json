@@ -1,6 +1,25 @@
 {
   "name": "@repo/fonts",
   "version": "0.1.0",
-  "main": "index.ts",
-  "types": "index.ts"
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "peerDependencies": {
+    "next": "^15.0.0",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "next": "15.5.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
 }

@@ -1,7 +1,5 @@
 "use client";
 
-import { useCart } from "@repo/cart-store";
-
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 
 export default function Header() {
